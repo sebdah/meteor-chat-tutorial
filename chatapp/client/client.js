@@ -1,10 +1,11 @@
 /**
 * Templates
 */
-Template.messages.messages = function () {
-  return Messages.find({}, { sort: { time: -1 }});
-}
-
+Template.messages.helpers({
+    messages: function() {
+        return Messages.find({}, { sort: { time: -1}});
+    }
+})
 
 Template.input.events = {
   'keydown input#message' : function (event) {
